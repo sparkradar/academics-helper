@@ -72,8 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleSoundBtn.addEventListener('click', function() {
         const isMuted = SoundManager.toggleMute();
         this.innerHTML = isMuted ? 
-            '<i class="fas fa-volume-mute"></i>' : 
-            '<i class="fas fa-volume-up"></i>';
+            '<i class="fas fa-volume-xmark"></i>' : 
+            '<i class="fas fa-volume-high"></i>';
     });
     
     // Event Listeners
@@ -277,6 +277,9 @@ document.addEventListener('DOMContentLoaded', function() {
         messageDiv.appendChild(messageContent);
         
         chatMessages.appendChild(messageDiv);
+        setTimeout(() => {
+            messageDiv.classList.add('chat-message-appear');
+        }, 10);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
     
